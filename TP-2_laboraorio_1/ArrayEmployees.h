@@ -71,6 +71,10 @@ int initEmployees(eEmployee* list, int len);
 
 //----------------------------------------------------------------------------------------------------------------------------------------
 
+int agragarEmpleado(eEmployee* lista,int len);
+
+//----------------------------------------------------------------------------------------------------------------------------------------
+
 /** \brief add in a existing list of employees the values received as parameters
  * in the first empty position
  * \param list employee*

@@ -10,29 +10,27 @@
 
 int main()
 {
+    /*char name[51];
+
+    nombre(name,"lll","eeee","rrrr",0,51);*/
+
+
     eEmployee empleado[TM];
 
     int respuesta;
-    int i;
-    int id;
-    char name[51];
-    char lastName[51];
-    float salary;
-    int sector;
 
-    /*harcodeo(empleado,LEN);// ------ EMPLEADOS HARCOR
-    //respuesta = initEmployees(empleado,LEN);// ---- TODOS EN VACIO
 
-    respuesta = encontrarMayor(empleado, LEN);
+    //harcodeo(empleado,LEN);// ------ EMPLEADOS HARCOR
+    respuesta = initEmployees(empleado,TM);// ---- TODOS EN VACIO
 
     printf("%d\n",respuesta);
 
-    i = autoId(empleado, LEN);
-
-    printf("%d",i);*/
-
-
-
-
+    respuesta = agragarEmpleado(empleado,TM);
+    if(respuesta==0)
+    {
+        printf("se pudo");
+    }else{
+        printf("no se pudo");
+    }
     return 0;
 }

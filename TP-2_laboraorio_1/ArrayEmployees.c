@@ -13,7 +13,6 @@ void harcodeo(eEmployee lista[],int len)
     char name[][51]={"ana","juan","pepe","laura","mauricio"};
     char lastName[][51] = {"catunta","grillo","argento","cordoba","gonzales"};
     float salary[] = {100,200,300,400,500};
-    //int sector[] = {"limpieza","seguidad","gerente","limpieza","gerente"};
     int sector[] = {1,2,3,1,2};
     int isEmpty[] = {1,0,0,0,0};
 
@@ -108,34 +107,45 @@ int initEmployees(eEmployee list[], int len)
 
 //----------------------------------------------------------------------------------------------------------------------------------------
 
+int agragarEmpleado(eEmployee* lista,int len)
+{
+    int retorno;
+    int index;
+
+    index = espacioLibre(lista,len);
+
+    if(index>-1)
+    {
+        retorno = addEmployee(lista,len,lista[index].id,lista[index].name,lista[index].lastName,lista[index].salary,lista[index].sector);
+        lista[index].isEmpty = NOT_EMPTY;
+    }
+
+    return retorno;
+}
+
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------
+
 int addEmployee(eEmployee lista[], int len, int id, char name[],char lastName[],float salary,int sector)
 {
     int retorno;
     int index;
 
-    if(lista!=NULL && (espacioLibre(lista,len))== -1)
+    if(lista!=NULL && (espacioLibre(lista,len))!=-1)
     {
-        index = espacioLibre(lista,len);
-        if(index != -1)
-        {
+            id = autoId(lista,len);
             nombre(name,"Ingrese el nombre: ","No se puedo,Intente de nuevo","Solo se permiten letras",0,51);
             nombre(lastName,"Ingrese el Apellido: ","No se puedo,Intente de nuevo","Solo se permiten letras",0,51);
             ingresarSalario(&salary,"Ingrese el salario: ","Error,el salario [0-1000000]",0,1000000);
             numero(&sector,"Ingrese el Sector:","Error,Ingreso un sector no valido",1,5);
 
-            lista[index].id = autoId(lista,len);
-            strcpy(lista[index].name,name);
-            strcpy(lista[index].lastName,lastName);
-            lista[index].salary = salary;
-            lista[index].sector = sector;
-            lista[index].isEmpty = EMPTY;
-        }
-    }else{
+     }else{
         retorno = -1;
         printf("No hay mas espacio libre\n");
         }
 
-    return retorno;
+    return 0 ;//retorno;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------
