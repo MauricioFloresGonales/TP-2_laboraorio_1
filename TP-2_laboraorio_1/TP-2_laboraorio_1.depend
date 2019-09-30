@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1569799896 source:c:\users\pipoca\desktop\tp 2\tp-2_laboraorio_1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Inputs.h"
+	"ArrayEmployees.h"
+	"sectores.h"
+
+1569796493 c:\users\pipoca\desktop\tp 2\tp-2_laboraorio_1\inputs.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1569799687 c:\users\pipoca\desktop\tp 2\tp-2_laboraorio_1\arrayemployees.h
+
+1569799703 source:c:\users\pipoca\desktop\tp 2\tp-2_laboraorio_1\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+	"sectores.h"
+
+1569799872 c:\users\pipoca\desktop\tp 2\tp-2_laboraorio_1\sectores.h
+
+1569799638 source:c:\users\pipoca\desktop\tp 2\tp-2_laboraorio_1\sectores.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+	"sectores.h"
+
