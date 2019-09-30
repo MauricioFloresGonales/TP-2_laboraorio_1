@@ -35,14 +35,17 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="ArrayEmployees.h" />
+		<Unit filename="Inputs.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Inputs.h" />
+		<Unit filename="funcionesAux.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="funcionesAux.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="sectores.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="sectores.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

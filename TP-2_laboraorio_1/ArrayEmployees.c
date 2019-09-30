@@ -3,7 +3,7 @@
 #include <string.h>
 
 #include "ArrayEmployees.h"
-#include "sectores.h"
+#include "funcionesAux.h"
 
 
 void harcodeo(eEmployee lista[],int len)
@@ -26,7 +26,63 @@ void harcodeo(eEmployee lista[],int len)
         lista[i].sector = sector[i];
         lista[i].isEmpty = isEmpty[i];
     }
+}
 
+//----------------------------------------------------------------------------------------------------------------------------------------
+
+int espacioLibre(eEmployee lista[], int len)
+{
+    int index;
+    int i;
+    for(i=0;i<len;i++)
+    {
+        if(lista[i].isEmpty == EMPTY)
+        {
+            index = i;
+            break;
+
+        }else{
+
+            index = -1;
+        }//if
+    }//for
+    return index;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------
+
+int autoId(eEmployee lista[], int len)
+{
+    int retorno;
+    int idAnterior;
+
+    idAnterior = encontrarMayor(lista,len);
+
+    retorno = idAnterior + 1 ;
+
+    return retorno;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------
+
+int encontrarMayor(eEmployee lista[], int len)
+{
+    int i;
+    int mayor;
+    int flag = -1;
+
+    for(i=0;i<len;i++)
+    {
+        if(flag == 0 && lista[i].id>mayor)
+        {
+            mayor = lista[i].id;
+
+        }else{
+            mayor = lista[i].id;
+            flag = 0;
+        }//if
+    }//for
+    return mayor;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------
@@ -62,117 +118,98 @@ int addEmployee(eEmployee lista[], int len, int id, char name[],char lastName[],
         index = espacioLibre(lista,len);
         if(index != -1)
         {
+            nombre(name,"Ingrese el nombre: ","No se puedo,Intente de nuevo","Solo se permiten letras",0,51);
+            nombre(lastName,"Ingrese el Apellido: ","No se puedo,Intente de nuevo","Solo se permiten letras",0,51);
+            ingresarSalario(&salary,"Ingrese el salario: ","Error,el salario [0-1000000]",0,1000000);
+            numero(&sector,"Ingrese el Sector:","Error,Ingreso un sector no valido",1,5);
+
             lista[index].id = autoId(lista,len);
-            nombre(lista[index].name,"Ingrese el nombre: ","No se puedo,Intente de nuevo","Solo se permiten letras",0,51);
-            nombre(lista[index].lastName,"Ingrese el Apellido: ","No se puedo,Intente de nuevo","Solo se permiten letras",0,51);
-            ingresarSalario(lista[index].salary,"Ingrese el suueldo: ","Solo puede ingresar numeros. ",0,999999);
-            numero(lista[index].sector,"Ingrese el Sector:");
-
+            strcpy(lista[index].name,name);
+            strcpy(lista[index].lastName,lastName);
+            lista[index].salary = salary;
+            lista[index].sector = sector;
+            lista[index].isEmpty = EMPTY;
         }
-
-
-
-
-
     }else{
         retorno = -1;
+        printf("No hay mas espacio libre\n");
         }
-
-
-
-
 
     return retorno;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------
 
-int espacioLibre(eEmployee lista[], int len)
+int findEmployeeById(eEmployee* list, int len,int id)
 {
     int index;
     int i;
-    for(i=0;i<len;i++)
-    {
-        if(lista[i].isEmpty == EMPTY)
-        {
-            index = i;
-            break;
-        }else{
 
-            index = -1;
-        }
-    }
+    if(list!=NULL || len<0)
+    {
+        for(i=0;i<len;i++)
+        {
+            if(list[i].isEmpty == NOT_EMPTY && list[i].id == id)
+            {
+                index = i;
+                break;
+
+            }else{
+                index = -1;
+            }//if2
+        }//for
+    }else{
+        index = -1;
+    }//if1
+
     return index;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------
 
-int autoId(eEmployee lista[], int len)
+int removeEmployee(eEmployee* list, int len, int id)
 {
     int retorno;
-    int idAnterior;
+    int i;
 
-    idAnterior = encontrarMayor(lista,len);
+    if(list!=NULL || len<0)
+    {
+        for(i=0;i<len;i++)
+        {
+            if(list[i].isEmpty == NOT_EMPTY && list[i].id == id)
+            {
+                list[i].isEmpty = EMPTY;
+                retorno = 0;
+            }else{
+                retorno = -1;
+            }//if2
+        }//for
 
-    retorno = idAnterior + 1 ;
+    }else{
+        retorno = -1;
+    }//if1
 
     return retorno;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------
 
-int encontrarMayor(eEmployee lista[], int len)
+int sortEmployees(eEmployee* list, int len, int order)
 {
-    int i;
-    int mayor;
-    int flag = -1;
-
-    for(i=0;i<len;i++)
-    {
-        if(flag == -1)
+    printf("Ingrese una opcion");
+    scanf("%d",&order);
+   do{
+        switch(order)
         {
-            mayor = lista[i].id;
-            flag = 0;
+        case 1:
+            ordenarVectorUp(list,len);
+            break;
+        case 2:
+            ordenarVectorDown(list,len);
+            break;
+        default:
+            printf("No eligio una opcion correcta.");
+        }
 
-        }else if(lista[i].id>mayor)
-            {
-                mayor = lista[i].id;
-            }
-    }
-    return mayor;
+   }while(order != 2);
 }
-
-//----------------------------------------------------------------------------------------------------------------------------------------
-
-void nombre(char* input,char message[],char eMessage[],char eNumMessage[], int lowLimit, int hiLimit)
-{
-    int validador;
-
-    while(validador == -1)
-    {
-        validador = getString(&input,message,eMessage,eNumMessage,lowLimit,hiLimit);
-    }
-
-}
-
-void ingresarSalario(float* valor,char message[],char eMessage[], float lowLimit, float hiLimit)
-{
-    int validador;
-
-    while(validador == -1)
-    {
-        validador = getFloat(&valor,message,eMessage,lowLimit,hiLimit);
-    }
-
-}
-
-void numero(int* valor,char message[],char eMessage[],int lowLimit, int hiLimit)
-{
-    int validador;
-
-    while(validador == -1)
-    {
-       validador = getInt(&valor,message,eMessage,lowLimit,hiLimit);
-    }
-}
-
