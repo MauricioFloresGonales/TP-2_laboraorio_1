@@ -30,25 +30,25 @@
 	"ArrayEmployees.h"
 	"sectores.h"
 
-1569880479 source:c:\users\pipoca\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\arrayemployees.c
+1569963194 source:c:\users\pipoca\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\arrayemployees.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"ArrayEmployees.h"
 	"funcionesAux.h"
 
-1569883800 c:\users\pipoca\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\arrayemployees.h
+1569963194 c:\users\pipoca\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\arrayemployees.h
 
 1569871968 c:\users\pipoca\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\sectores.h
 
-1569880493 source:c:\users\pipoca\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\main.c
+1569959089 source:c:\users\pipoca\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Inputs.h"
 	"ArrayEmployees.h"
 	"funcionesAux.h"
 
-1569871930 c:\users\pipoca\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\inputs.h
+1569957173 c:\users\pipoca\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\inputs.h
 
 1569870317 source:c:\users\pipoca\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\sectores.c
 	<stdio.h>
@@ -57,7 +57,7 @@
 	"ArrayEmployees.h"
 	"sectores.h"
 
-1569871930 source:c:\users\pipoca\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\inputs.c
+1569957850 source:c:\users\pipoca\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\inputs.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -65,12 +65,13 @@
 	<conio.h>
 	"Inputs.h"
 
-1569883800 c:\users\pipoca\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\funcionesaux.h
+1569961346 c:\users\pipoca\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\funcionesaux.h
 
-1569877858 source:c:\users\pipoca\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\funcionesaux.c
+1569961595 source:c:\users\pipoca\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\funcionesaux.c
 	<stdio.h>
 	<stdlib.h>
 	"funcionesAux.h"
+	"Inputs.h"
 
 1569742550 source:c:\users\alumno\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\funcionesaux.c
 	<stdio.h>

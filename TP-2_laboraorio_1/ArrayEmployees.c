@@ -130,22 +130,23 @@ int agragarEmpleado(eEmployee* lista,int len)
 int addEmployee(eEmployee lista[], int len, int id, char name[],char lastName[],float salary,int sector)
 {
     int retorno;
-    int index;
 
-    if(lista!=NULL && (espacioLibre(lista,len))!=-1)
+    if(lista!=NULL && (espacioLibre(lista,len))>-1)
     {
             id = autoId(lista,len);
             nombre(name,"Ingrese el nombre: ","No se puedo,Intente de nuevo","Solo se permiten letras",0,51);
             nombre(lastName,"Ingrese el Apellido: ","No se puedo,Intente de nuevo","Solo se permiten letras",0,51);
-            ingresarSalario(&salary,"Ingrese el salario: ","Error,el salario [0-1000000]",0,1000000);
+            ingresarSalario(&salary,"Ingrese el salario: ","Error,el salario [1-10000]",1,10000);
             numero(&sector,"Ingrese el Sector:","Error,Ingreso un sector no valido",1,5);
+
+            retorno = 0;
 
      }else{
         retorno = -1;
         printf("No hay mas espacio libre\n");
         }
 
-    return 0 ;//retorno;
+    return retorno;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------
@@ -206,20 +207,109 @@ int removeEmployee(eEmployee* list, int len, int id)
 
 int sortEmployees(eEmployee* list, int len, int order)
 {
-    printf("Ingrese una opcion");
-    scanf("%d",&order);
-   do{
-        switch(order)
-        {
-        case 1:
-            ordenarVectorUp(list,len);
-            break;
-        case 2:
-            ordenarVectorDown(list,len);
-            break;
-        default:
-            printf("No eligio una opcion correcta.");
-        }
+    int retorno;
 
-   }while(order != 2);
+    if(list!=NULL || len<0)
+    {
+        printf("Ingrese una opcion:\n[1] indicate UP - [0] indicate DOWN");
+        scanf("%d",&order);
+       do{
+            switch(order)
+            {
+            case 1:
+                ordenarVectorUp(list,len);
+                retorno = 0;
+                break;
+            case 2:
+                ordenarVectorDown(list,len);
+                retorno = 0;
+                break;
+            default:
+                printf("No eligio ninguna opcion.");
+            }
+
+         }while(order != 2);
+    }else{
+        retorno = -1;
+    }
+   return retorno;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------
+
+void ordenarVectorUp(eEmployee* list, int len)
+{
+    int i;
+    int j;
+    eEmployee aux;
+
+    for(i=0;i<len-1;i++)
+    {
+        for(j=i+1;j<len;j++)
+        {
+            if(list[i].id>list[j].id)
+            {
+                aux.id = list[i].id;
+                list[i].id = list[j].id;
+                list[j].id = aux.id;
+            }
+        }
+    }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------
+
+void ordenarVectorDown(eEmployee* list, int len)
+{
+    int i;
+    int j;
+    eEmployee aux;
+
+    for(i=0;i<len-1;i++)
+    {
+        for(j=i+1;j<len;j++)
+        {
+            if(list[i].id<list[j].id)
+            {
+                aux.id = list[i].id;
+                list[i].id = list[j].id;
+                list[j].id = aux.id;
+            }
+        }
+    }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------
+
+int printEmployees(eEmployee* list, int length)
+{
+    int retorno;
+    int i;
+
+    if(list!=NULL || length<0)
+    {
+        for(i=0;i<length;i++)
+        {
+            mostrarUnEmpleado(list,i);
+        }
+        retorno = 0;
+    }else{
+        retorno = -1;
+    }
+
+    return retorno;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------
+
+void mostrarUnEmpleado(eEmployee* list, int index)
+{
+    if(list[index].isEmpty == NOT_EMPTY)
+    {
+        printf("%d",list[index].id);
+        printf("%s",list[index].name);
+        printf("%s",list[index].lastName);
+        printf("%f",list[index].salary);
+        printf("%d",list[index].sector);
+    }
 }

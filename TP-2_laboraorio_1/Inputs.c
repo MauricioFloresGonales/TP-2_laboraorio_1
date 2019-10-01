@@ -9,18 +9,13 @@
 
 int getInt(int* valor, char message[],char eMessage[], int lowLimit, int hiLimit)
 {
-    int opcion;
     int retorno;
     char numeroAux[hiLimit+1];
     int validador;
 
-    do{
-        printf("%s", message);
-        fflush(stdin);
-        scanf("%s", numeroAux);
-        opcion = confirmar();
-
-    }while(opcion != 0);
+    printf("%s", message);
+    fflush(stdin);
+    scanf("%s", numeroAux);
 
     validador = validarNumero(numeroAux);
 
@@ -50,18 +45,13 @@ int getInt(int* valor, char message[],char eMessage[], int lowLimit, int hiLimit
 
 int getFloat(float* valor,char message[],char eMessage[], float lowLimit, float hiLimit)
 {
-    int opcion;
     int retorno;
     char numeroAux[(int)hiLimit+1];
     int validador;
 
-    do{
-        printf("%s", message);
-        fflush(stdin);
-        scanf("%s", numeroAux);
-        opcion = confirmar();
-
-    }while(opcion != 0);
+    printf("%s", message);
+    fflush(stdin);
+    scanf("%s", numeroAux);
 
     validador = validarNumero(numeroAux);
 
@@ -109,15 +99,11 @@ int validarNumero(char* numeroChar)
 int getChar(char* input,char message[],char eMessage[], char lowLimit, char hiLimit)
  {
     int retorno;
-    int opcion;
     char charAux;
 
-    do{
-        printf("%s",message);
-        fflush(stdin);
-        scanf("%c",&charAux);
-        opcion = confirmar();
-    }while(opcion !=0);
+    printf("%s",message);
+    fflush(stdin);
+    scanf("%c",&charAux);
 
     charAux = tolower(charAux);
     lowLimit = tolower(lowLimit);
@@ -139,16 +125,11 @@ int getChar(char* input,char message[],char eMessage[], char lowLimit, char hiLi
 
 int getOneChar(char* input,char message[],char eMessage[],char oneLimit, char twoLimit)
 {
-    int opcion;
     int retorno = -1;
 
-    do{
-        printf("%s",message);
-        fflush(stdin);
-        scanf("%s",input);
-        opcion = confirmar();
-
-    }while(opcion != 0);
+    printf("%s",message);
+    fflush(stdin);
+    scanf("%s",input);
 
     if(*input == oneLimit || *input == twoLimit)
     {
@@ -199,17 +180,12 @@ int confirmar()
 int getString(char* input,char message[],char eMessage[],char eNumMessage[], int lowLimit, int hiLimit)
 {
     int retorno = 0;
-    int opcion;
     char arrAux[hiLimit+1];
     int largo;
 
-    do{
-        printf("%s",message);
-        fflush(stdin);
-        scanf("%s",arrAux);
-        opcion = confirmar();
-
-    }while(opcion != 0);
+    printf("%s",message);
+    fflush(stdin);
+    scanf("%s",arrAux);
 
     largo = strlen(arrAux);
 
@@ -257,17 +233,12 @@ int validarLetrasEnString(char palabra[],int tam)
 int getStringWithNums(char* input,char message[],char eMessage[],int lowLimit, int hiLimit)
 {
     int retorno = 0;
-    int opcion;
     char arrAux[hiLimit+1];
     int largo;
 
-    do{
-        printf("%s",message);
-        fflush(stdin);
-        scanf("%s",arrAux);
-        opcion = confirmar();
-
-    }while(opcion != 0);
+    printf("%s",message);
+    fflush(stdin);
+    scanf("%s",arrAux);
 
     largo = strlen(arrAux);
 

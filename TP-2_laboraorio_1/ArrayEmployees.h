@@ -129,4 +129,46 @@ indicate UP or DOWN order
  */
 int sortEmployees(eEmployee* list, int len, int order);
 
+//----------------------------------------------------------------------------------------------------------------------------------------
 
+/** \brief Ordena de mayor a menor
+ *
+ * \param vector[] int
+ * \param tam int
+ * \return void
+ *
+ */
+void ordenarVectorUp(eEmployee* list,int len);
+
+//----------------------------------------------------------------------------------------------------------------------------------------
+
+/** \brief Ordena de menor a mayor
+ *
+ * \param vector[]
+ * \param tam
+ * \return void
+ *
+ */
+void ordenarVectorDown(eEmployee* list,int len);
+
+//----------------------------------------------------------------------------------------------------------------------------------------
+
+/** \brief print the content of employees array
+ *
+ * \param list Employee*
+ * \param length int
+ * \return int
+ *
+ */
+int printEmployees(eEmployee* list, int length);
+
+//----------------------------------------------------------------------------------------------------------------------------------------
+
+/** \brief Muetra solo el empleado que se le pide
+ *
+ * \param list eEmployee*
+ * \param index pocision del Empleado
+ * \return void
+ *
+ */
+void mostrarUnEmpleado(eEmployee* list, int index);

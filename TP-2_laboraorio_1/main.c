@@ -10,27 +10,39 @@
 
 int main()
 {
-    /*char name[51];
+    int opcion;
+    do{
+        printf("1- ALTA:\n");
+        printf("2- MODIFICAR:\n");
+        printf("3- BAJA:\n");
+        printf("4- INFORMAR:\n");
+        printf("5- SALIR:\n");
+        printf("Elija una opcion:\n");
+        scanf("%d", &opcion);
 
-    nombre(name,"lll","eeee","rrrr",0,51);*/
+        switch(opcion)
+        {
+        case 1:
+            int agragarEmpleado(eEmployee* lista,int len);
 
+            break;
+        case 2:
 
-    eEmployee empleado[TM];
+            break;
+        case 3:
 
-    int respuesta;
+            break;
+        case 4:
 
+            break;
+        default:
+            printf("SALIR\n");
+        }
 
-    //harcodeo(empleado,LEN);// ------ EMPLEADOS HARCOR
-    respuesta = initEmployees(empleado,TM);// ---- TODOS EN VACIO
+    system("pause");
+    system("cls");
 
-    printf("%d\n",respuesta);
+    }while(opcion != 5);
 
-    respuesta = agragarEmpleado(empleado,TM);
-    if(respuesta==0)
-    {
-        printf("se pudo");
-    }else{
-        printf("no se pudo");
-    }
     return 0;
 }
