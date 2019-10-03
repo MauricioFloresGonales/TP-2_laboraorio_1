@@ -73,14 +73,15 @@
 	"funcionesAux.h"
 	"Inputs.h"
 
-1569742550 source:c:\users\alumno\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\funcionesaux.c
+1570109286 source:c:\users\alumno\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\funcionesaux.c
 	<stdio.h>
 	<stdlib.h>
 	"funcionesAux.h"
+	"Inputs.h"
 
-1569737472 c:\users\alumno\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\funcionesaux.h
+1570109286 c:\users\alumno\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\funcionesaux.h
 
-1569737472 source:c:\users\alumno\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\inputs.c
+1570109286 source:c:\users\alumno\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\inputs.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -88,18 +89,18 @@
 	<conio.h>
 	"Inputs.h"
 
-1569737472 c:\users\alumno\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\inputs.h
+1570109286 c:\users\alumno\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\inputs.h
 
-1569743662 source:c:\users\alumno\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\main.c
+1570109598 source:c:\users\alumno\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Inputs.h"
 	"ArrayEmployees.h"
 	"funcionesAux.h"
 
-1569738305 c:\users\alumno\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\arrayemployees.h
+1570110222 c:\users\alumno\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\arrayemployees.h
 
-1569743626 source:c:\users\alumno\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\arrayemployees.c
+1570109837 source:c:\users\alumno\desktop\tp-2_laboraorio_1\tp-2_laboraorio_1\arrayemployees.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

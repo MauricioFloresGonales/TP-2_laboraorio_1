@@ -9,16 +9,16 @@
 void harcodeo(eEmployee lista[],int len)
 {
     int i;
-    int id[] ={111,222,333,444,555};
+
     char name[][51]={"ana","juan","pepe","laura","mauricio"};
     char lastName[][51] = {"catunta","grillo","argento","cordoba","gonzales"};
     float salary[] = {100,200,300,400,500};
     int sector[] = {1,2,3,1,2};
-    int isEmpty[] = {1,0,0,0,0};
+    int isEmpty[] = {0,0,0,0,0};
 
     for(i=0;i<len;i++)
     {
-        lista[i].id = id[i];
+        lista[i].id = autoId(lista,len);
         strcpy(lista[i].name,name[i]);
         strcpy(lista[i].lastName,lastName[i]);
         lista[i].salary = salary[i];
@@ -52,14 +52,14 @@ int espacioLibre(eEmployee lista[], int len)
 
 int autoId(eEmployee lista[], int len)
 {
-    int retorno;
+    int id;
     int idAnterior;
 
     idAnterior = encontrarMayor(lista,len);
 
-    retorno = idAnterior + 1 ;
+    id = idAnterior+1;
 
-    return retorno;
+    return id;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------
@@ -72,12 +72,12 @@ int encontrarMayor(eEmployee lista[], int len)
 
     for(i=0;i<len;i++)
     {
-        if(flag == 0 && lista[i].id>mayor)
+        if(flag == 0 && lista[i].id>=mayor)
         {
             mayor = lista[i].id;
 
         }else{
-            mayor = lista[i].id;
+            mayor = 1;
             flag = 0;
         }//if
     }//for
@@ -306,10 +306,10 @@ void mostrarUnEmpleado(eEmployee* list, int index)
 {
     if(list[index].isEmpty == NOT_EMPTY)
     {
-        printf("%d",list[index].id);
-        printf("%s",list[index].name);
-        printf("%s",list[index].lastName);
-        printf("%f",list[index].salary);
-        printf("%d",list[index].sector);
+        printf("%d\t",list[index].id);
+        printf("%s\t",list[index].name);
+        printf("%s\t",list[index].lastName);
+        printf("%f\t",list[index].salary);
+        printf("%d\n",list[index].sector);
     }
 }

@@ -10,6 +10,10 @@
 
 int main()
 {
+    eEmployee empleados[4];
+    int funcionamiento;
+    int id;
+
     int opcion;
     do{
         printf("1- ALTA:\n");
@@ -23,10 +27,17 @@ int main()
         switch(opcion)
         {
         case 1:
-            int agragarEmpleado(eEmployee* lista,int len);
+            harcodeo(empleados,4);
+            funcionamiento = printEmployees(empleados,4);
+            funcionamiento = agragarEmpleado(empleados,4);
 
             break;
         case 2:
+            printf("Ingrese un Id: ");
+            scanf("%d",&id)
+
+            index = findEmployeeById(empleados,4,id);
+            void mostrarUnEmpleado(eEmployee* list, int index)
 
             break;
         case 3:
